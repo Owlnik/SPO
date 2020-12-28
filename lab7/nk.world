@@ -8,45 +8,36 @@ window
   show_data 1              # 1=on 0=off
 )
 
-define robot_sonar1 sensor (
-	size [0.1 0.1 0.1]
-	range [0.1 2]
-	fov 10
-	color_rgba [0 1 0 1]
+define robot_laser sensor (
+	range [ 0.0 5.0 ]
+	fov 180
+	samples 18
 )
 
-define robot_sonar2 sensor (
-	size [0.1 0.1 0.1]
-	range [0.1 2]
-	fov 10
-	color_rgba [0 1 0 1]
-)
-
-define robot_sonars1 ranger (
-	robot_sonar1( pose [0.5 0.5 0 0] )
-)
-
-define robot_sonars2 ranger (
-	robot_sonar2( pose [0 -0.5 0 -90] )
+define robot_laser1 ranger (
+        robot_laser(
+		pose [ 0.26 0 -0.25 0 ]
+		color_rgba [ 0 1 0 1 ]
+		size [ 0.1 0.1 0.1 ]
+	)
 )
 
 define robot position
 (
-	size [1 1 1]	
+	size [0.5 0.5 0.5]
 
 	block (
   		points 4
 		point[0] [0 0]
-		point[1] [1 0]
-		point[2] [1 1]
-		point[3] [0 1]
-		z [0 1]
+		point[1] [0.5 0]
+		point[2] [0.5 0.5]
+		point[3] [0 0.5]
+		z [0 0.5]
 	)
 
 	drive "diff"
 
-	robot_sonars1()
-	robot_sonars2()
+	robot_laser1()
 )
 
 define floorplan model
@@ -70,4 +61,4 @@ floorplan
 )
 
 # throw in a robot
-robot( pose [ 10 10 0.000 180.000 ] color "red")
+robot( pose [ 10 10 0.000 0.000 ] color "red")
