@@ -3,7 +3,7 @@
 Седьмая лабораторная работа, стояла задача создать лабиринт по которому будет ползать робот.
 
 # Пример работы
-  Вот [ссылка](https://vk.com/away.php?to=https%3A%2F%2Fdrive.google.com%2Ffolderview%3Fid%3D1V8aVGFMZE2gEPXcpjLI-Dk_RqgoG5h3B&cc_key=) на то как работает робот
+  Вот [ссылка](https://drive.google.com/file/d/1VFiZ08Oi8rxxFZAs4DwOoPbrrBydEF-4/view?usp=drivesdk) на то как работает робот
  
 # Для запуска необходимо
 -В окне1 запустить ```roscore```
